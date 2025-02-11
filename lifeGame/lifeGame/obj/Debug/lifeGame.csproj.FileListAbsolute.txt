@@ -1,0 +1,8 @@
+C:\Users\211119\source\repos\lifeGame\lifeGame\bin\Debug\lifeGame.exe.config
+C:\Users\211119\source\repos\lifeGame\lifeGame\bin\Debug\lifeGame.exe
+C:\Users\211119\source\repos\lifeGame\lifeGame\bin\Debug\lifeGame.pdb
+C:\Users\211119\source\repos\lifeGame\lifeGame\obj\Debug\lifeGame.csproj.AssemblyReference.cache
+C:\Users\211119\source\repos\lifeGame\lifeGame\obj\Debug\lifeGame.csproj.SuggestedBindingRedirects.cache
+C:\Users\211119\source\repos\lifeGame\lifeGame\obj\Debug\lifeGame.csproj.CoreCompileInputs.cache
+C:\Users\211119\source\repos\lifeGame\lifeGame\obj\Debug\lifeGame.exe
+C:\Users\211119\source\repos\lifeGame\lifeGame\obj\Debug\lifeGame.pdb
