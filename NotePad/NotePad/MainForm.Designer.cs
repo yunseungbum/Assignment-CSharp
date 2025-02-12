@@ -58,6 +58,8 @@
             this.SaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.FontDialog = new System.Windows.Forms.FontDialog();
             this.FileSystemWatcher = new System.IO.FileSystemWatcher();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.NewNotePadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStrip.SuspendLayout();
             this.StatusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FileSystemWatcher)).BeginInit();
@@ -79,6 +81,7 @@
             // FileToolStripMenuItem
             // 
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NewNotePadToolStripMenuItem,
             this.NewMakeFileToolStripMenuItem,
             this.OpenToolStripMenuItem,
             this.SaveToolStripMenuItem,
@@ -153,7 +156,7 @@
             // 
             this.UndoToolStripMenuItem.Name = "UndoToolStripMenuItem";
             this.UndoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.UndoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.UndoToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.UndoToolStripMenuItem.Text = "실행취소(&U)";
             this.UndoToolStripMenuItem.Click += new System.EventHandler(this.RunCancelButtonClick);
             // 
@@ -161,7 +164,7 @@
             // 
             this.CutToolStripMenuItem.Name = "CutToolStripMenuItem";
             this.CutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.CutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CutToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.CutToolStripMenuItem.Text = "잘라내기(&T)";
             this.CutToolStripMenuItem.Click += new System.EventHandler(this.CutBottonClick);
             // 
@@ -169,7 +172,7 @@
             // 
             this.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem";
             this.CopyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.CopyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CopyToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.CopyToolStripMenuItem.Text = "복사(&C)";
             this.CopyToolStripMenuItem.Click += new System.EventHandler(this.CopyButtonClick);
             // 
@@ -177,7 +180,7 @@
             // 
             this.PasteToolStripMenuItem.Name = "PasteToolStripMenuItem";
             this.PasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.PasteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.PasteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.PasteToolStripMenuItem.Text = "붙여넣기(P)";
             this.PasteToolStripMenuItem.Click += new System.EventHandler(this.PasteButtonClick);
             // 
@@ -185,7 +188,7 @@
             // 
             this.FindToolStripMenuItem.Name = "FindToolStripMenuItem";
             this.FindToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-            this.FindToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.FindToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.FindToolStripMenuItem.Text = "찾기(&F)";
             this.FindToolStripMenuItem.Click += new System.EventHandler(this.FindToolClick);
             // 
@@ -193,7 +196,7 @@
             // 
             this.ChangeToolStripMenuItem.Name = "ChangeToolStripMenuItem";
             this.ChangeToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.H)));
-            this.ChangeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ChangeToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.ChangeToolStripMenuItem.Text = "바꾸기";
             this.ChangeToolStripMenuItem.Click += new System.EventHandler(this.ChangeToolClick);
             // 
@@ -201,7 +204,7 @@
             // 
             this.AllSelectToolStripMenuItem.Name = "AllSelectToolStripMenuItem";
             this.AllSelectToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.AllSelectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AllSelectToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.AllSelectToolStripMenuItem.Text = "모두 선택";
             this.AllSelectToolStripMenuItem.Click += new System.EventHandler(this.AllSelectToolClick);
             // 
@@ -209,7 +212,7 @@
             // 
             this.TimeDateToolStripMenuItem.Name = "TimeDateToolStripMenuItem";
             this.TimeDateToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-            this.TimeDateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.TimeDateToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.TimeDateToolStripMenuItem.Text = "시간/날짜";
             this.TimeDateToolStripMenuItem.Click += new System.EventHandler(this.TimeDateToolClick);
             // 
@@ -225,14 +228,14 @@
             // FontToolStripMenuItem
             // 
             this.FontToolStripMenuItem.Name = "FontToolStripMenuItem";
-            this.FontToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.FontToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.FontToolStripMenuItem.Text = "글꼴(&F)";
             this.FontToolStripMenuItem.Click += new System.EventHandler(this.FontToolClick);
             // 
             // AutoChangeTextTool
             // 
             this.AutoChangeTextTool.Name = "AutoChangeTextTool";
-            this.AutoChangeTextTool.Size = new System.Drawing.Size(180, 22);
+            this.AutoChangeTextTool.Size = new System.Drawing.Size(161, 22);
             this.AutoChangeTextTool.Text = "자동 줄 바꿈(&W)";
             this.AutoChangeTextTool.Click += new System.EventHandler(this.AutoTextChangeToolClick);
             // 
@@ -248,7 +251,7 @@
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(135, 6);
             // 
             // StateCheckToolStripMenuItem
             // 
@@ -256,7 +259,7 @@
             this.StateCheckToolStripMenuItem.CheckOnClick = true;
             this.StateCheckToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.StateCheckToolStripMenuItem.Name = "StateCheckToolStripMenuItem";
-            this.StateCheckToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.StateCheckToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.StateCheckToolStripMenuItem.Text = "상태 표시줄";
             this.StateCheckToolStripMenuItem.Click += new System.EventHandler(this.StateCheckToolStripMenuItemClick);
             // 
@@ -274,8 +277,8 @@
             // 
             this.toolStripCursorPosition.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Right;
             this.toolStripCursorPosition.Name = "toolStripCursorPosition";
-            this.toolStripCursorPosition.Size = new System.Drawing.Size(71, 19);
-            this.toolStripCursorPosition.Text = "Ln 1, Col 1";
+            this.toolStripCursorPosition.Size = new System.Drawing.Size(122, 19);
+            this.toolStripCursorPosition.Text = "Ln 1, Col 1, Count 0";
             this.toolStripCursorPosition.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // TextBox
@@ -298,6 +301,15 @@
             this.FileSystemWatcher.EnableRaisingEvents = true;
             this.FileSystemWatcher.SynchronizingObject = this;
             // 
+            // NewNotePadToolStripMenuItem
+            // 
+            this.NewNotePadToolStripMenuItem.Name = "NewNotePadToolStripMenuItem";
+            this.NewNotePadToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.N)));
+            this.NewNotePadToolStripMenuItem.Size = new System.Drawing.Size(268, 22);
+            this.NewNotePadToolStripMenuItem.Text = "새 창(&W)";
+            this.NewNotePadToolStripMenuItem.Click += new System.EventHandler(this.NewNotePadClick);
+            // 
             // Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -308,6 +320,7 @@
             this.Controls.Add(this.MenuStrip);
             this.MainMenuStrip = this.MenuStrip;
             this.Name = "Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "메모장";
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
@@ -351,6 +364,8 @@
         private System.IO.FileSystemWatcher FileSystemWatcher;
         private System.Windows.Forms.ToolStripMenuItem CutToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel toolStripCursorPosition;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem NewNotePadToolStripMenuItem;
     }
 }
 

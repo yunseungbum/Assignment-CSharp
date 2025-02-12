@@ -64,15 +64,19 @@ namespace NotePad
             TextBox.Text = "";
         }
 
-
         //열기
         private void OpenToolClick(object sender, EventArgs e)
         {
             this.SaveFileDialog.Filter = "텍스트 문서(*.txt)|*.txt|모든파일|*.*";
-            OpenFileDialog.ShowDialog();
-            Filename = OpenFileDialog.FileName;
-            string data = System.IO.File.ReadAllText(OpenFileDialog.FileName);
-            TextBox.Text = data;
+            if (OpenFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Filename = OpenFileDialog.FileName;
+                if (!string.IsNullOrEmpty(Filename))
+                {
+                    string data = System.IO.File.ReadAllText(Filename);
+                    TextBox.Text = data;
+                }
+            }
         }
 
         //끝내기
@@ -122,6 +126,7 @@ namespace NotePad
                 TextBox.Undo();
             }
         }
+
         //복사
         private void CopyButtonClick(object sender, EventArgs e)
         {
@@ -130,9 +135,8 @@ namespace NotePad
                 TextBox.Copy();
             }
         }
+
         //자르기
-
-
         private void CutBottonClick(object sender, EventArgs e)
         {
             if (TextBox.SelectionLength > 0)
@@ -140,11 +144,13 @@ namespace NotePad
                 TextBox.Cut();
             }
         }
+
         //자동줄바꿈
         private void AutoTextChangeToolClick(object sender, EventArgs e)
         {
             TextBox.WordWrap = !TextBox.WordWrap;
         }
+
         //글꼴
         private void FontToolClick(object sender, EventArgs e)
         {
@@ -184,18 +190,27 @@ namespace NotePad
             UpdateStatusBar();
         }
 
-        //위치 업데이트 메서드
+        //커서 위치 및 문자 수 업데이트 메서드
         private void UpdateStatusBar()
         {
             int line = TextBox.GetLineFromCharIndex(TextBox.SelectionStart) + 1;
             int column = TextBox.SelectionStart - TextBox.GetFirstCharIndexOfCurrentLine() + 1;
+            int strNum = TextBox.Text.Length;
 
-            toolStripCursorPosition.Text = $"Ln {line}, Col {column}";
+            toolStripCursorPosition.Text = $"Ln {line}, Col {column}, Count {strNum}";
         }
 
+        //상태줄표시
         private void StateCheckToolStripMenuItemClick(object sender, EventArgs e)
         {
             StatusStrip.Visible = !StatusStrip.Visible;
+        }
+
+        //새 창
+        private void NewNotePadClick(object sender, EventArgs e)
+        {
+            Form newMemo = new Form();
+            newMemo.Show();
         }
     }
 }

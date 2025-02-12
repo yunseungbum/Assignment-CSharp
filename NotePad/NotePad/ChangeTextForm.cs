@@ -13,7 +13,6 @@ namespace NotePad
     public partial class ChangeTextForm : System.Windows.Forms.Form
     {
         private TextBox MainTextBox;
-        private int LastIndex = 0;
         public ChangeTextForm(TextBox textBox)
         {
             InitializeComponent();
@@ -26,17 +25,17 @@ namespace NotePad
             string searchText = SearchText.Text;
             StringComparison comparisonType = CaseTextCheckBox.Checked ? StringComparison.CurrentCulture : StringComparison.CurrentCultureIgnoreCase;
 
-            LastIndex = MainTextBox.Text.IndexOf(searchText, LastIndex + 1, comparisonType);
+            int startIndex = MainTextBox.SelectionStart + MainTextBox.SelectionLength;
+            int foundIndex = MainTextBox.Text.IndexOf(searchText, startIndex, comparisonType);
 
-            if (LastIndex != -1)
+            if (foundIndex != -1)
             {
-                MainTextBox.Select(LastIndex, searchText.Length);
+                MainTextBox.Select(foundIndex, searchText.Length);
                 MainTextBox.Focus();
             }
             else
             {
                 MessageBox.Show("더 이상 찾을 내용이 없습니다.", "찾기 완료", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LastIndex = 0;
             }
         }
 

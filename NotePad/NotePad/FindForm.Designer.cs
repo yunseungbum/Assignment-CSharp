@@ -56,7 +56,7 @@
             this.FindNextButton.Name = "FindNextButton";
             this.FindNextButton.Size = new System.Drawing.Size(94, 27);
             this.FindNextButton.TabIndex = 2;
-            this.FindNextButton.Text = "다음찾기";
+            this.FindNextButton.Text = "다음찾기(&F)";
             this.FindNextButton.UseVisualStyleBackColor = true;
             this.FindNextButton.Click += new System.EventHandler(this.FindNextClick);
             // 
@@ -90,6 +90,7 @@
             this.Controls.Add(this.SearchTextBox);
             this.Controls.Add(this.label1);
             this.Name = "FindDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "찾기";
             this.ResumeLayout(false);
             this.PerformLayout();

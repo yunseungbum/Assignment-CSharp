@@ -36,6 +36,7 @@ namespace NotePad
             else
             {
                 MessageBox.Show("텍스트를 찾을 수 없습니다.", "찾기", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SearchTextBox.Focus();
             }
         }
 
