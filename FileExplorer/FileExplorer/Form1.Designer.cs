@@ -30,7 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.SearchButton = new System.Windows.Forms.Button();
-            this.Search = new System.Windows.Forms.TextBox();
+            this.SearchText = new System.Windows.Forms.TextBox();
             this.FilePath = new System.Windows.Forms.TextBox();
             this.FrontButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
@@ -51,7 +51,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.SearchButton);
-            this.panel1.Controls.Add(this.Search);
+            this.panel1.Controls.Add(this.SearchText);
             this.panel1.Controls.Add(this.FilePath);
             this.panel1.Controls.Add(this.FrontButton);
             this.panel1.Controls.Add(this.BackButton);
@@ -71,14 +71,15 @@
             this.SearchButton.TabIndex = 6;
             this.SearchButton.Text = "검색";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchClick);
             // 
-            // Search
+            // SearchText
             // 
-            this.Search.Location = new System.Drawing.Point(522, 5);
-            this.Search.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(217, 23);
-            this.Search.TabIndex = 5;
+            this.SearchText.Location = new System.Drawing.Point(522, 5);
+            this.SearchText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.SearchText.Name = "SearchText";
+            this.SearchText.Size = new System.Drawing.Size(217, 23);
+            this.SearchText.TabIndex = 5;
             // 
             // FilePath
             // 
@@ -146,6 +147,7 @@
             this.ListView.TabIndex = 5;
             this.ListView.UseCompatibleStateImageBehavior = false;
             this.ListView.View = System.Windows.Forms.View.Details;
+            this.ListView.DoubleClick += new System.EventHandler(this.ListViewDoubleClick);
             // 
             // ColumnName
             // 
@@ -206,7 +208,7 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.TextBox Search;
+        private System.Windows.Forms.TextBox SearchText;
         private System.Windows.Forms.TextBox FilePath;
         private System.Windows.Forms.Button FrontButton;
         private System.Windows.Forms.Button BackButton;
