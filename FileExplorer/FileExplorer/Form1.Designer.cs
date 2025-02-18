@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.SearchText = new System.Windows.Forms.TextBox();
             this.FilePath = new System.Windows.Forms.TextBox();
             this.FrontButton = new System.Windows.Forms.Button();
             this.BackButton = new System.Windows.Forms.Button();
@@ -50,8 +48,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.SearchButton);
-            this.panel1.Controls.Add(this.SearchText);
             this.panel1.Controls.Add(this.FilePath);
             this.panel1.Controls.Add(this.FrontButton);
             this.panel1.Controls.Add(this.BackButton);
@@ -62,31 +58,12 @@
             this.panel1.Size = new System.Drawing.Size(800, 38);
             this.panel1.TabIndex = 1;
             // 
-            // SearchButton
-            // 
-            this.SearchButton.Location = new System.Drawing.Point(743, 4);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(48, 29);
-            this.SearchButton.TabIndex = 6;
-            this.SearchButton.Text = "검색";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchClick);
-            // 
-            // SearchText
-            // 
-            this.SearchText.Location = new System.Drawing.Point(522, 5);
-            this.SearchText.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SearchText.Name = "SearchText";
-            this.SearchText.Size = new System.Drawing.Size(217, 23);
-            this.SearchText.TabIndex = 5;
-            // 
             // FilePath
             // 
             this.FilePath.Location = new System.Drawing.Point(55, 5);
             this.FilePath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FilePath.Name = "FilePath";
-            this.FilePath.Size = new System.Drawing.Size(461, 23);
+            this.FilePath.Size = new System.Drawing.Size(693, 23);
             this.FilePath.TabIndex = 4;
             // 
             // FrontButton
@@ -98,7 +75,7 @@
             this.FrontButton.TabIndex = 3;
             this.FrontButton.Text = ">";
             this.FrontButton.UseVisualStyleBackColor = true;
-            this.FrontButton.Click += new System.EventHandler(this.BeforeButtonClcik);
+            this.FrontButton.Click += new System.EventHandler(this.BeforeButtonClick);
             // 
             // BackButton
             // 
@@ -207,8 +184,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.TextBox SearchText;
         private System.Windows.Forms.TextBox FilePath;
         private System.Windows.Forms.Button FrontButton;
         private System.Windows.Forms.Button BackButton;
