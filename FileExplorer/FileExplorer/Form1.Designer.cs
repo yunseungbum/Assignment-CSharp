@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileExplorer));
             this.panel1 = new System.Windows.Forms.Panel();
             this.FilePath = new System.Windows.Forms.TextBox();
             this.FrontButton = new System.Windows.Forms.Button();
@@ -41,6 +43,8 @@
             this.Category = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Size = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.RightPanel = new System.Windows.Forms.Panel();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.ComboBox = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.LeftPanel.SuspendLayout();
             this.RightPanel.SuspendLayout();
@@ -60,7 +64,7 @@
             // 
             // FilePath
             // 
-            this.FilePath.Location = new System.Drawing.Point(55, 5);
+            this.FilePath.Location = new System.Drawing.Point(55, 11);
             this.FilePath.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.FilePath.Name = "FilePath";
             this.FilePath.Size = new System.Drawing.Size(693, 23);
@@ -90,16 +94,17 @@
             // 
             // TreeView
             // 
-            this.TreeView.Location = new System.Drawing.Point(0, 0);
+            this.TreeView.Location = new System.Drawing.Point(-3, 31);
             this.TreeView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TreeView.Name = "TreeView";
-            this.TreeView.Size = new System.Drawing.Size(200, 520);
+            this.TreeView.Size = new System.Drawing.Size(200, 492);
             this.TreeView.TabIndex = 4;
             this.TreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.TreeViewBeforeExpand);
             this.TreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.TreeViewAfterSelect);
             // 
             // LeftPanel
             // 
+            this.LeftPanel.Controls.Add(this.ComboBox);
             this.LeftPanel.Controls.Add(this.TreeView);
             this.LeftPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftPanel.Location = new System.Drawing.Point(0, 38);
@@ -117,10 +122,11 @@
             this.Category,
             this.Size});
             this.ListView.HideSelection = false;
-            this.ListView.Location = new System.Drawing.Point(-3, 0);
+            this.ListView.LargeImageList = this.imageList1;
+            this.ListView.Location = new System.Drawing.Point(-3, 31);
             this.ListView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ListView.Name = "ListView";
-            this.ListView.Size = new System.Drawing.Size(600, 524);
+            this.ListView.Size = new System.Drawing.Size(600, 493);
             this.ListView.TabIndex = 5;
             this.ListView.UseCompatibleStateImageBehavior = false;
             this.ListView.View = System.Windows.Forms.View.Details;
@@ -157,6 +163,29 @@
             this.RightPanel.Name = "RightPanel";
             this.RightPanel.Size = new System.Drawing.Size(600, 524);
             this.RightPanel.TabIndex = 3;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "folderopened_yellow.ico");
+            this.imageList1.Images.SetKeyName(1, "Hopstarter-Sleek-Xp-Basic-Document-Blank.ico");
+            // 
+            // ComboBox
+            // 
+            this.ComboBox.FormattingEnabled = true;
+            this.ComboBox.Items.AddRange(new object[] {
+            "Details",
+            "SmallIcon",
+            "LargeIcon",
+            "List",
+            "Tile"});
+            this.ComboBox.Location = new System.Drawing.Point(0, 0);
+            this.ComboBox.Name = "ComboBox";
+            this.ComboBox.Size = new System.Drawing.Size(121, 23);
+            this.ComboBox.TabIndex = 7;
+            this.ComboBox.Text = "Details";
+            this.ComboBox.SelectedIndexChanged += new System.EventHandler(this.ComboBoxSelectedIndexChanged);
             // 
             // FileExplorer
             // 
@@ -196,6 +225,8 @@
         private System.Windows.Forms.ColumnHeader Category;
         private System.Windows.Forms.ColumnHeader Size;
         private System.Windows.Forms.Panel RightPanel;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.ComboBox ComboBox;
     }
 }
 

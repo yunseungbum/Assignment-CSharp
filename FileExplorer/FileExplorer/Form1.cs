@@ -16,6 +16,7 @@ namespace FileExplorer
         public FileExplorer()
         {
             InitializeComponent();
+            ListView.SmallImageList = imageList1;
         }
 
         private void FileExplorerLoad(object sender, EventArgs e)
@@ -108,7 +109,6 @@ namespace FileExplorer
             }
         }
 
-
         private void BeforeButtonClick(object sender, EventArgs e)
         {
             if (BackStack.Count > 0)
@@ -118,6 +118,7 @@ namespace FileExplorer
             }
         }
         #endregion
+
 
         #region 메서드
         private void LoadFilesAndFolders(string path)
@@ -137,7 +138,7 @@ namespace FileExplorer
                     {
                         info.Name, "폴더", info.LastWriteTime.ToString(), ""
                     })
-                    { Tag = directory };
+                    { Tag = directory,ImageIndex = 0 };
 
                     ListView.Items.Add(item);
                 }
@@ -149,7 +150,7 @@ namespace FileExplorer
                     {
                         info.Name, "파일", info.LastWriteTime.ToString(), info.Length.ToString() + " bytes"
                     })
-                    { Tag = file };
+                    { Tag = file, ImageIndex = 1};
 
                     ListView.Items.Add(item);
                 }
@@ -183,8 +184,29 @@ namespace FileExplorer
             return null;
         }
 
+
         #endregion
 
-
+        private void ComboBoxSelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (ComboBox.Text)
+            {
+                case "Details":
+                    ListView.View = View.Details;
+                    break;
+                case "SmallIcon":
+                    ListView.View = View.SmallIcon;
+                    break;
+                case "LargeIcon":
+                    ListView.View = View.LargeIcon;
+                    break;
+                case "List":
+                    ListView.View = View.List;
+                    break;
+                case "Tile":
+                    ListView.View = View.Tile;
+                    break;
+            }
+        }
     }
 }
